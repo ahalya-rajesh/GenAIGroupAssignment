@@ -1,0 +1,118 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #FBE3D2;
+    color: #4E6C79;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%; /* Increase width for more space */
+    max-width: 900px; /* Adjust max width as needed */
+    margin: 40px auto; /* Central alignment */
+    padding: 40px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center; /* Center align text within container */
+}
+
+h1, h2 {
+    color: #4E6C79;
+    font-weight: 600;
+    margin-bottom: 30px; /* Increased margin for more space */
+}
+
+h1 {
+    font-size: 2.8em; /* Slightly larger heading */
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p, li {
+    color: #7B8C93;
+    font-size: 1.1em; /* Slightly larger font */
+    margin-bottom: 20px; /* Increased margin for paragraph spacing */
+    text-align: left; /* Left align paragraphs and list items */
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left; /* Left align list items */
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+#conversation {
+    margin-top: 40px; /* Increased margin for conversation section */
+}
+
+#user-input-area label {
+    display: block;
+    margin-bottom: 10px;
+    color: #7B8C93;
+    text-align: left; /* Left align label */
+}
+
+#user-input-area textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 1em;
+    background-color: #f8f8f8;
+}
+
+#user-input-area button {
+    padding: 15px 30px;
+    background-color: #4E6C79;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#user-input-area button:hover {
+    background-color: #435e69;
+}
+
+#response-area div {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    font-size: 1em;
+    color: #7B8C93;
+    text-align: left; /* Left align response text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    p, li {
+        font-size: 1em;
+    }
+}
