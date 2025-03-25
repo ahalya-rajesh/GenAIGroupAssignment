@@ -8,24 +8,37 @@ body {
 }
 
 .container {
-    width: 90%; /* Increase width for more space */
-    max-width: 900px; /* Adjust max width as needed */
-    margin: 40px auto; /* Central alignment */
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
     padding: 40px;
     background-color: #FFFFFF;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    text-align: center; /* Center align text within container */
+    text-align: center;
+}
+
+#title-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#logo {
+    width: 80px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px;
 }
 
 h1, h2 {
     color: #4E6C79;
     font-weight: 600;
-    margin-bottom: 30px; /* Increased margin for more space */
+    margin-bottom: 30px;
 }
 
 h1 {
-    font-size: 2.8em; /* Slightly larger heading */
+    font-size: 2.8em;
 }
 
 h2 {
@@ -34,15 +47,15 @@ h2 {
 
 p, li {
     color: #7B8C93;
-    font-size: 1.1em; /* Slightly larger font */
-    margin-bottom: 20px; /* Increased margin for paragraph spacing */
-    text-align: left; /* Left align paragraphs and list items */
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 ul {
     list-style-type: none;
     padding-left: 0;
-    text-align: left; /* Left align list items */
+    text-align: left;
 }
 
 li {
@@ -50,14 +63,14 @@ li {
 }
 
 #conversation {
-    margin-top: 40px; /* Increased margin for conversation section */
+    margin-top: 40px;
 }
 
 #user-input-area label {
     display: block;
     margin-bottom: 10px;
     color: #7B8C93;
-    text-align: left; /* Left align label */
+    text-align: left;
 }
 
 #user-input-area textarea {
@@ -94,13 +107,13 @@ li {
     background-color: #f3f3f3;
     font-size: 1em;
     color: #7B8C93;
-    text-align: left; /* Left align response text */
+    text-align: left;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
-        width: 95%; /* Adjust width for smaller screens */
+        width: 95%;
         padding: 30px;
     }
 
