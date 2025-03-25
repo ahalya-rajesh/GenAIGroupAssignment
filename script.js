@@ -75,17 +75,62 @@ function getRandomVoiceMode() {
     return modes[Math.floor(Math.random() * modes.length)];
 }
 
-function getResponse(text) {
+function analyzeText(text) {
     text = text.toLowerCase();
-    const voiceMode = getRandomVoiceMode();
-    const modeResponses = responses[voiceMode];
-    for (const keyword in modeResponses) {
-        if (text.includes(keyword)) {
-            return modeResponses[keyword][Math.floor(Math.random() * modeResponses[keyword].length)];
-        }
+    let keywords = [];
+    let sentiment = "neutral";
+    let topics = [];
+
+    // Simple keyword extraction
+    const emotionKeywords = {
+        positive: ["happy", "joyful", "excited"],
+        negative: ["sad", "angry", "anxious"]
+    };
+
+    for (const emotion in emotionKeywords) {
+        emotionKeywords[emotion].forEach(word => {
+            if (text.includes(word)) {
+                keywords.push(word);
+                sentiment = emotion;
+            }
+        });
     }
-    const allResponses = Object.values(responses).flatMap(mode => Object.values(mode).flat());
-    return allResponses[Math.floor(Math.random() * allResponses.length)];
+
+    // Simple topic modeling simulation
+    const topicKeywords = {
+        work: ["job", "career", "office"],
+        relationships: ["friend", "family", "partner"]
+    };
+
+    for (const topic in topicKeywords) {
+        topicKeywords[topic].forEach(word => {
+            if (text.includes(word)) {
+                topics.push(topic);
+            }
+        });
+    }
+
+    return { keywords, sentiment, topics };
+}
+
+function getResponse(text) {
+    const analysis = analyzeText(text);
+
+    if (analysis.sentiment === "negative") {
+        return "It sounds like you're feeling " + analysis.sentiment + ". Tell me more about that.";
+    } else if (analysis.topics.includes("work")) {
+        return "How's work been affecting you lately?";
+    } else {
+        const voiceMode = getRandomVoiceMode();
+        const modeResponses = responses[voiceMode];
+        for (const keyword in modeResponses) {
+            if (text.includes(keyword)) {
+                return modeResponses[keyword][Math.floor(Math.random() * modeResponses[keyword].length)];
+            }
+        }
+        const allResponses = Object.values(responses).flatMap(mode => Object.values(mode).flat());
+        return allResponses[Math.floor(Math.random() * allResponses.length)];
+    }
 }
 
 function displayResponse(text) {
